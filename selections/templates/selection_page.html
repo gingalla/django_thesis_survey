@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/styles.css' %}" />
+    <script src="{% static 'js/selections.js' %}"></script>
+</head>
+<body onload="setImages()">
+
+<h1>Image Selections</h1>
+<p>Question 1: If you had to choose only one of these images to represent the simulation, which would it be?</p>
+
+<form action="{% url 'process_image_selection' %}" method="post" id="make_selection">
+{% csrf_token %}
+<div class="images">
+    <div class ="image1">
+        {% load static %}
+        <img id="img1" src="" alt="Image Option 1">
+        <button onclick="select_option(1)" id="select_image1">Image A</button>
+    </div>
+
+    <div class="image2">
+        {% load static %}
+        <img id="img2" src="" alt="Image Option 2">
+        <button onclick="select_option(2)" id="select_image2">Image B</button>
+    </div>
+</div>
+
+    <button onclick="select_option(0)" id="select_neutral">Neutral</button>
+
+    <!-- Hidden inputs store values to make data available in POST data when form is submitted-->
+    <input type="hidden" name="image_dataset" value="" id="image_dataset">
+    <input type="hidden" name="image1" value="0" id="image1">
+    <input type="hidden" name="image2" value="0" id="image2">
+    <input type="hidden" name="selection" value="0" id="selection">
+</form>
+
+</body>
+</html>

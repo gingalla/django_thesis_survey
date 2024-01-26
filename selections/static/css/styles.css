@@ -1,0 +1,37 @@
+body {
+   text-align: center;
+}
+
+p {
+   font-size: 25px;
+}
+
+img {
+   width:400px;
+   border:3px solid;
+   margin:10px;
+}
+
+.images {
+   display: flex;
+   align-items: center;
+   justify-content: center;
+ }
+
+.image1, .image2 {
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   flex-direction: column;
+ }
+
+button {
+   font-size: 25px;
+   border: 1.5px solid rgb(212, 208, 208);
+   background-color: rgb(162, 162, 162);
+   cursor:pointer;
+ }
+
+ #select_neutral {
+   background-color: rgb(230, 90, 90);
+ }
